@@ -111,3 +111,10 @@ Route::get('receber/nome',function(Request $request){
                     $resultado = $dia * 24 . 'horas ' . $dia * 1440 . 'minutos ' . $dia * 86400 . 'segundos'; 
                     return $resultado;
                 });
+
+                Route::get('receber/preço', function (Request $request){
+                    $preço = $request->input('preço');
+                    $quantidade = $request->input('quantidade');
+                    $resultado = $preço * $quantidade;
+                    return $resultado;
+                });
