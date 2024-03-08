@@ -99,3 +99,9 @@ Route::get('receber/nome',function(Request $request){
                     $resultado = $compra/10;
                     return $resultado;
                 });
+
+                Route::get('valordecomissao',function (Request $request){
+                    $vendas = $request->input('vendas');
+                    $resultado = ($vendas * 5)/100;
+                    return $resultado;
+                });
