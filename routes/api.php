@@ -86,3 +86,10 @@ Route::get('receber/nome',function(Request $request){
                     $resultado =  ($desconto * $preço)/100;
                     return $preço - $resultado ;
                 });
+
+                Route::get('calcular/aumentosalarial', function(Request $request){
+                    $salario = $request->input('salario');
+                    $aumento = $request->input('aumento');
+                    $resultado = ($aumento * $salario)/100;
+                    return $salario . ' salario anterior' . ', ' . $aumento . '% aumento' . ', ' . $resultado + $salario . ' salario atual';
+                });
