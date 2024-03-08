@@ -79,3 +79,10 @@ Route::get('receber/nome',function(Request $request){
                     $resultado = $base * $altura;
                     return $resultado;
                 });
+
+                Route::get('calcular/desconto', function(Request $request){
+                    $preço = $request->input('preço');
+                    $desconto = $request->input('desconto');
+                    $resultado =  ($desconto * $preço)/100;
+                    return $preço - $resultado ;
+                });
