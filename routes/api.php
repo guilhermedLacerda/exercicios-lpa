@@ -93,3 +93,9 @@ Route::get('receber/nome',function(Request $request){
                     $resultado = ($aumento * $salario)/100;
                     return $salario . ' salario anterior' . ', ' . $aumento . '% aumento' . ', ' . $resultado + $salario . ' salario atual';
                 });
+
+                Route::get('codigo', function(Request $request){
+                    $compra = $request->input('compra');
+                    $resultado = $compra/10;
+                    return $resultado;
+                });
