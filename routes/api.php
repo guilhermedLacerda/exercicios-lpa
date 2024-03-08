@@ -43,3 +43,9 @@ Route::get('receber/nome',function(Request $request){
                     return $resultado;
                 });
                 
+                Route::get('receber/primeiroNumero/s',function(Request $request){
+                    $primeiroNumero = $request->input('primeiroNumero');
+                    $segundoNumero = $request->input('s');
+                    $resultado = $primeiroNumero * $segundoNumero;
+                    return $resultado;
+                });
