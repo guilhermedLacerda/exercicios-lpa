@@ -105,3 +105,9 @@ Route::get('receber/nome',function(Request $request){
                     $resultado = ($vendas * 5)/100;
                     return $resultado;
                 });
+
+                Route::get('calcular/dias',function(Request $request){
+                    $dia = $request->input('dias');
+                    $resultado = $dia * 24 . 'horas ' . $dia * 1440 . 'minutos ' . $dia * 86400 . 'segundos'; 
+                    return $resultado;
+                });
