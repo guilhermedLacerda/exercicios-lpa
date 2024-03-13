@@ -11,14 +11,14 @@ Route::get('receber/nome',function(Request $request){
     Route::get('receber/nome/idade',function(Request $request){
         $nome = $request->input('nome');
         $idade = $request->input('idade');
-        return $nome . $idade;
+        return 'Meu nome é ' . $nome . ' tenho ' .$idade . ' anos de idade';
         });
 
         Route::get('receber/nome/nascimento/cidadeNatal',function(Request $request){
             $nome = $request->input('nome');
             $nascimento = $request->input('nascimento');
             $cidadeNatal = $request->input('cidadeNatal');
-            return $nome . $nascimento . $cidadeNatal;
+            return 'meu nome é '.$nome . ' minha data de nascimento é ' . $nascimento. ' nasci na cidade de ' . $cidadeNatal;
             });
 
             Route::get('receber/primeiroNumero/segundoNumero',function(Request $request){
@@ -36,7 +36,7 @@ Route::get('receber/nome',function(Request $request){
                     return $resultado;
                 });
 
-                Route::get('receber/primeiroNumero/segundoNumero',function(Request $request){
+                Route::get('receber/primeiro/segundo',function(Request $request){
                     $primeiroNumero = $request->input('primeiroNumero');
                     $segundoNumero = $request->input('segundoNumero');
                     $resultado = $primeiroNumero / $segundoNumero;
@@ -50,13 +50,13 @@ Route::get('receber/nome',function(Request $request){
                     return $resultado;
                 });
 
-                Route::get('receber/primeiroNumero/segundoNumero/terceiroNumero,quartoNumero,quintoNumero',function(Request $request){
+                Route::get('receber/primeiroNumero/segundoNumero/terceiroNumero/quartoNumero/quintoNumero',function(Request $request){
                     $primeiroNumero = $request->input('primeiroNumero');
                     $segundoNumero = $request->input('segundoNumero');
                     $terceiroNumero = $request->input('terceiroNumero');
                     $quartoNumero = $request->input('quartoNumero');
                     $quintoNumero = $request->input('quintoNumero');
-                    $resultado = $primeiroNumero + $segundoNumero + $terceiroNumero + $quartoNumero + $quintoNumero / 5;
+                    $resultado = ($primeiroNumero + $segundoNumero + $terceiroNumero + $quartoNumero + $quintoNumero )/ 5;
                     return $resultado;
                 });
 
@@ -118,3 +118,5 @@ Route::get('receber/nome',function(Request $request){
                     $resultado = $preço * $quantidade;
                     return $resultado;
                 });
+
+                
