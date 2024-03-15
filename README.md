@@ -41,7 +41,7 @@ Certifique-se de ter os seguintes requisitos atendidos antes de começar a traba
 
 ## Licença
 
-projeto esta licenciado sob a [MIT License] (LICENSE),
+projeto esta licenciado sob a [MIT License](LICENSE),
 o que signficia que voce pode utilizá-lo livremente para fins educacionais, comerciais ou pessoais.
 
 ## Contato
