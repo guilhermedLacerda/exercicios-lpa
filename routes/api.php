@@ -142,3 +142,42 @@ Route::get('/verifica/idade',function (Request $request){
     } else { return "maior de idade"; }
 
 });
+
+Route::get('verificar/par', function(Request $request){
+    $numero = $request->input('numero');
+    if ($numero % 2 == 0){return " ele é par";}
+    else {return "ele é impar";}
+});
+
+Route::get('verifica/numero', function(Request $request){
+    $numero = $request->input('numero');
+    if ($numero > 10){return "é maior que 10";}
+    else {return "é menor que 10";}
+});
+
+Route::get('temperatura', function(Request $request){
+    $temperatura = $request->input('temperatura');
+    if ($temperatura > 30){return "Esta quente!";}
+    else {return "Nao está quente!";}
+
+});
+
+Route::get('determinar/numero',function(Request $request){
+    $numero = $request->input('numero');
+    if ($numero > 0 ){return "é positivo";}
+    else if ($numero < 0){return "é negativo";}
+    else {return "é zero";}
+});
+
+Route::get('maior/numero',function(Request $request){
+    $numero1 = $request->input('numero1');
+    $numero2 = $request->input('numero2');
+    if ($numero1 > $numero2){return "primeiro numero é maior";}
+    else {return "o segundo numero é maior";}
+});
+
+Route::get('divisivel', function(Request $request){
+    $numero = $request->input('numero');
+    if ($numero % 3 == 0){return "é divisivel por 3";}
+    else {return "nao é divisivel";}
+});
