@@ -131,3 +131,14 @@ Route::get('exemplo/condicao', function (Request $request) {
 
     return $mensagem;
 });
+
+Route::get('/verifica/idade',function (Request $request){
+    $idade=$request->input('idade');
+    
+    if ($idade < 18 ) {
+        
+        return "menor de idade";
+        
+    } else { return "maior de idade"; }
+
+});
