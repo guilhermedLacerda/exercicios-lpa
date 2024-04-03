@@ -400,3 +400,98 @@ Route::get('exercicio20', function (Request $request) {
         return $numero1 / $numero2;
     }
 });
+
+Route::get('exercicio21', function (Request $request) {
+    $nota1 = $request->input('nota1');
+    $nota2 = $request->input('nota2');
+    $nota3 = $request->input('nota3');
+    $resultado = ($nota1 + $nota2 + $nota3) / 3;
+    if ($resultado >= 7) {
+        return "Aprovado";
+    } else {
+        return "Reprovado";
+    }
+});
+
+Route::get('exercicio22', function (Request $request) {
+    $renda = $request->input('renda');
+    if ($renda <= 1900) {
+        return "isento de imposto";
+    } else if ($renda > 1900) {
+        if ($renda <= 2800) {
+            return $renda - ((7 * $renda) / 100);
+        }
+    } else if ($renda > 2800) {
+        if ($renda <= 3700) {
+            return $renda - ((15 * $renda) / 100);
+        } else {
+            return $renda - ((22 * $renda) / 100);
+        }
+    }
+});
+
+Route::get('exercicio23', function (Request $request) {
+    $ano = $request->input('ano');
+    if ($ano % 4 == 0) {
+        return "ano bissexto";
+    } else {
+        return "nao é ano bissexto";
+    }
+});
+
+Route::get('exercicio24', function (Request $request) {
+    $preço = $request->input('preço');
+    if ($preço > 1000) {
+        return $preço - (($preço * 15) / 100);
+    } else {
+        return $preço;
+    }
+});
+
+Route::get('exercicio25', function (Request $request) {
+    $peso = $request->input('peso');
+    $altura = $request->input('altura');
+    $resultado = $peso / ($altura * $altura);
+    if ($resultado < 18.5) {
+        return "baixo peso";
+    } else if ($resultado >= 18.5) {
+        if ($resultado <= 24.9) {
+            return "peso normal";
+        }
+    }
+    if ($resultado >= 25) {
+        if ($resultado <= 29.9) {
+            return "sobrepeso";
+        }
+    }
+    if ($resultado >= 30) {
+        if ($resultado <= 34.9) {
+            return "obesidade classe I";
+        }
+    }
+    if ($resultado >= 35) {
+        if ($resultado <= 39.9) {
+            return "obesidade classe II";
+        }
+    } else {
+        return "obesidade classe III";
+    }
+    return "teste";
+});
+
+Route::get('exercicio26', function (Request $request) {
+    $salario = $request->input('salario');
+    $codigo = $request->input('codigo');
+    if ($codigo == 1) {
+        return "o aumento salaria foi de " . (($salario * 5) / 100);
+    }
+    if ($codigo == 2) {
+        return "o aumento salaria foi de " . (($salario * 10) / 100);
+    }
+    if ($codigo == 3) {
+        return "o aumento salaria foi de " . (($salario * 15) / 100);
+    }
+    if ($codigo == 4) {
+        return "o aumento salaria foi de " . (($salario * 20) / 100);
+    }
+});
